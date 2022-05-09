@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>我思故我在</title>
+  
+  <subtitle>记录思考点滴</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-05-08T15:16:14.478Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Feng Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Happy birthday,Wang!</title>
+    <link href="http://example.com/2022/05/01/wangchenglue/"/>
+    <id>http://example.com/2022/05/01/wangchenglue/</id>
+    <published>2022-05-01T01:56:23.000Z</published>
+    <updated>2022-05-08T15:16:14.478Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="生日快乐！"><a href="#生日快乐！" class="headerlink" title="生日快乐！"></a>生日快乐！</h2><p>14岁，少年加油，一切皆有可能！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;生日快乐！&quot;&gt;&lt;a href=&quot;#生日快乐！&quot; class=&quot;headerlink&quot; title=&quot;生日快乐！&quot;&gt;&lt;/a&gt;生日快乐！&lt;/h2&gt;&lt;p&gt;14岁，少年加油，一切皆有可能！&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
