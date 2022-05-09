@@ -98,31 +98,25 @@
       <h1>contact</h1>
     </div>
 
-    <script>
-    $("#btn").on("click",function(){
-        var obj = $("#content").serialize();  //获取id为content的form表单里面的内容,name值均为formspree提供不能更改
-        $.ajax({
-            type:"post",						//必须post请求
-            url:"https://formspree.io/joycode@163.com", //abc@qq.com换成你要接收的邮箱地址
-            async:true,
-            data:obj,            									
-            dataType:"json",
-            success: res=>{
-                alert('邮件已发送!!!');   			//发送成功后的操作
-            },
-            error:res=>{
-                alert("未知错误,发送失败");
-            }
-        });
-    })
-<form id="content">
-    <input type="text" name="name" placeholder="输入你的姓名"/>       
-    <input type="email" name="_replyto" placeholder="输入你的邮箱"/>
-    <input type="button" value="发送" id="btn"/> 
+    <!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/xyyolyqa"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email" >
+  </label><br>
+  <label>
+    Your message:
+    <textarea name="message" ></textarea>
+  </label><br>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
 </form>
   
 
- 
+
 
   </div>
 </div>
