@@ -98,23 +98,48 @@
       <h1>contact</h1>
     </div>
 
-    <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xyyolyqa"
-  method="POST">
-  <label>
-    Your email:
-    <input type="email" name="email" >
-  </label><br>
-  <label>
-    Your message:
-    <textarea name="message" height="40" width="60"></textarea>
-  </label><br>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+    <form id="my-form" action="https://formspree.io/f/xyyolyqa" method="POST">
+  <label>Email:</label>
+  <input type="email" name="email" />
+  <label>Message:</label>
+  <input type="text" name="message" />
+  <button id="my-form-button">Submit</button>
+  <p id="my-form-status"></p>
 </form>
-  
-
+<!-- Place this script at the end of the body tag -->
+<script>
+    var form = document.getElementById("my-form");
+    
+<pre><code>async function handleSubmit(event) &#123;
+  event.preventDefault();
+  var status = document.getElementById(&quot;my-form-status&quot;);
+  var data = new FormData(event.target);
+  fetch(event.target.action, &#123;
+    method: form.method,
+    body: data,
+    headers: &#123;
+        &#39;Accept&#39;: &#39;application/json&#39;
+    &#125;
+  &#125;).then(response =&gt; &#123;
+    if (response.ok) &#123;
+      status.innerHTML = &quot;Thanks for your submission!&quot;;
+      form.reset()
+    &#125; else &#123;
+      response.json().then(data =&gt; &#123;
+        if (Object.hasOwn(data, &#39;errors&#39;)) &#123;
+          status.innerHTML = data[&quot;errors&quot;].map(error =&gt; error[&quot;message&quot;]).join(&quot;, &quot;)
+        &#125; else &#123;
+          status.innerHTML = &quot;Oops! There was a problem submitting your form&quot;
+        &#125;
+      &#125;)
+    &#125;
+  &#125;).catch(error =&gt; &#123;
+    status.innerHTML = &quot;Oops! There was a problem submitting your form&quot;
+  &#125;);
+&#125;
+form.addEventListener(&quot;submit&quot;, handleSubmit)
+</code></pre>
+<p></script></p>
 
 
   </div>
